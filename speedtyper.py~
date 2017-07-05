@@ -24,13 +24,11 @@ endTime = time.time()
 
 elapsedTime = endTime - startTime
 elapsedString = "{0:.2f}".format(elapsedTime)
-grossWPM = words/(elapsedTime/60)
-grossString = "{0:.2f}".format(grossWPM)
+grossWPM = "{0:.2f}".format(words/(elapsedTime/60))
 
 """Calculate Net WPM (Include error rate)"""
-errors = sum([int(i!=j) for i, j in zip(test, userType)])
-netWPM = grossWPM - (errors/(elapsedTime/60))
-netString = "{0:.2f}".format(netWPM)
+uncorrectedErrors = sum([int(i!=j) for i, j in zip(test, userType)])
+netWPM = grossWPM - (uncorrectedErrors/(elapsedTime/60))
 
 
-print "You typed the phrase in {0} seconds at a speed of {1} Gross WPM and {2} Net WPM with {3} uncorrected errors!".format(elapsedString, grossString, netString, errors)
+print "You typed the phrase in {0} seconds at a speed of {1} Gross WPM and {2} Net WPM with {3} uncorrected errors!".format(elapsedString, grossWPM, netWPM, uncorrectederrors)
