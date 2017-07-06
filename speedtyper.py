@@ -1,36 +1,72 @@
+# Prototype for Speed Typing game written in Python
+# Tyler McKean
+
+# Imports
 import time
 
-print "Hello and welcome to SpeedTyper!"
-ready = False
 
-while not ready:
-	userReady = raw_input("Please type 'ready' when you want to begin\n")
-	ready = (userReady == 'ready')
+class SpeedTyper:
+    test_string = ""
 
-test = "Hello, my name is Tyler McKean."
+    def __init__(self):
+        self.test_string = "We the People of the United States, in Order to form a more perfect Union, establish " \
+                           "\nJustice, insure domestic Tranquility, provide for the common defence, promote the " \
+                           "general \nWelfare, and secure the Blessings of Liberty to ourselves and our Posterity, " \
+                           "\ndo ordain and establish this Constitution for the United States of America. "
+        self.words = len(self.test_string) / 5.0
 
-"""Gross WPM Calculation"""
-words = len(test)/5
+    @staticmethod
+    def is_ready():
+        user_ready = raw_input("Please type 'ready' when you want to begin\n")
+        return user_ready == 'ready'
 
-print "Get ready to type in the phrase when it appears in 5 seconds!"
+    @staticmethod
+    def welcome():
+        print "Hello and welcome to SpeedTyper!"
 
-for i in range(5):
-	print 5 - i
-	time.sleep(1)
+    @staticmethod
+    def countdown():
+        print "Get ready to type in the phrase when it appears in 5 seconds!"
 
-startTime = time.time()
-userType = raw_input(test + "\n" + "Your input: \n")
-endTime = time.time()
+        for i in range(5):
+            print 5 - i
+            time.sleep(1)
 
-elapsedTime = endTime - startTime
-elapsedString = "{0:.2f}".format(elapsedTime)
-grossWPM = words/(elapsedTime/60)
-grossString = "{0:.2f}".format(grossWPM)
+    @staticmethod
+    def calculate_time(start_time, end_time):
+        return end_time - start_time
 
-"""Calculate Net WPM (Include error rate)"""
-errors = sum([int(i!=j) for i, j in zip(test, userType)])
-netWPM = grossWPM - (errors/(elapsedTime/60))
-netString = "{0:.2f}".format(netWPM)
+    def calculate_wpm(self, elapsed_time, user_type):
+        analysis = []
+        gross_wpm = self.words / (elapsed_time / 60)
+        errors = sum([int(i != j) for i, j in zip(self.test_string, user_type)])
+        net_wpm = gross_wpm - (errors / (elapsed_time / 60))
+        analysis.append(gross_wpm)
+        analysis.append(net_wpm)
+        analysis.append(errors)
+        return analysis
 
+    @staticmethod
+    def format(result):
+        return "{0:.2f}".format(result)
 
-print "You typed the phrase in {0} seconds at a speed of {1} Gross WPM and {2} Net WPM with {3} uncorrected errors!".format(elapsedString, grossString, netString, errors)
+    def score(self, elapsed_time, results):
+        print "You typed the phrase in {0} seconds at a speed of {1} Gross WPM and {2} Net WPM with {3} uncorrected " \
+              "errors!".format(self.format(elapsed_time), self.format(results[0]),
+                               self.format(results[1]), self.format(results[2]))
+
+    def play(self):
+        self.welcome()
+        while not self.is_ready():
+            time.sleep(1)
+        self.countdown()
+        start_time = time.time()
+        user_type = raw_input(self.test_string + "\n" + "Your input: \n")
+        end_time = time.time()
+        elapsed_time = self.calculate_time(start_time, end_time)
+        results = self.calculate_wpm(elapsed_time, user_type)
+        self.score(elapsed_time, results)
+
+if __name__ == '__main__':
+    game = SpeedTyper()
+    game.play()
