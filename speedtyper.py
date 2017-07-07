@@ -10,9 +10,9 @@ class SpeedTyper:
 
     def __init__(self):
         self.test_string = "We the People of the United States, in Order to form a more perfect Union, establish " \
-                           "\nJustice, insure domestic Tranquility, provide for the common defence, promote the " \
-                           "general \nWelfare, and secure the Blessings of Liberty to ourselves and our Posterity, " \
-                           "\ndo ordain and establish this Constitution for the United States of America."
+                           "Justice, insure domestic Tranquility, provide for the common defence, promote the " \
+                           "general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, " \
+                           "do ordain and establish this Constitution for the United States of America."
         self.words = len(self.test_string) / 5.0
 
     @staticmethod
