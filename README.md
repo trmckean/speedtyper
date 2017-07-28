@@ -2,13 +2,14 @@
 
 Copyright © 2017 Tyler McKean
 
-#Project Information
+# Project Information
 Tyler McKean
 mckean@pdx.edu
 
     SpeedTyper is a game designed in the Swift programming language for the iOS platform. The game presents a user with a block of text and asks them to type it in their keyboard. The goal of the game is to type the text as fast as possible and with as few errors as possible. This software is meant for users who want to know how to create a simple game using the Swift programming language and also for users who want a lightweight way to test their typing skills.
     This game is a work in progress and has a lot of features that could reasonably be added.
-#Current implementation:
+    
+# Current implementation:
     Shows the user a block of text and records the amount of time it takes to put them in. Uses a very simplistic means of calculating errors, one that needs to be fixed.
 
 # WEEK 3 UPDATE
