@@ -4,7 +4,6 @@
 # Imports
 import time
 
-
 class SpeedTyper:
     test_string = ""
 
