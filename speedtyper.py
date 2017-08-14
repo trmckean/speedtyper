@@ -21,7 +21,7 @@ class SpeedTyper:
 
     @staticmethod
     def welcome():
-        print "Hello and welcome to SpeedTyper!"
+        return "Hello and welcome to SpeedTyper!"
 
     @staticmethod
     def countdown():
@@ -55,7 +55,7 @@ class SpeedTyper:
                                self.format(results[1]), self.format(results[2]))
 
     def play(self):
-        self.welcome()
+        print self.welcome()
         while not self.is_ready():
             time.sleep(1)
         self.countdown()
