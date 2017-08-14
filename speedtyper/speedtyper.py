@@ -3,15 +3,13 @@
 
 # Imports
 import time
+from GUI.MainWindow import MainWindow
 
 class SpeedTyper:
     test_string = ""
 
     def __init__(self):
-        self.test_string = "We the People of the United States, in Order to form a more perfect Union, establish " \
-                           "Justice, insure domestic Tranquility, provide for the common defence, promote the " \
-                           "general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, " \
-                           "do ordain and establish this Constitution for the United States of America."
+        self.test_string = "Hello, World! Type this text!"
         self.words = len(self.test_string) / 5.0
 
     @staticmethod
@@ -55,6 +53,9 @@ class SpeedTyper:
                                self.format(results[1]), self.format(results[2]))
 
     def play(self):
+        window = MainWindow(self.test_string)
+        window.run()
+        """
         print self.welcome()
         while not self.is_ready():
             time.sleep(1)
@@ -65,6 +66,7 @@ class SpeedTyper:
         elapsed_time = self.calculate_time(start_time, end_time)
         results = self.calculate_wpm(elapsed_time, user_type)
         self.score(elapsed_time, results)
+        """
 
 if __name__ == '__main__':
     game = SpeedTyper()
