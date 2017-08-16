@@ -1,5 +1,7 @@
-from speedtyper import SpeedTyper
 import unittest
+
+from speedtyper import SpeedTyper
+
 
 class SpeedTyperTests(unittest.TestCase):
 

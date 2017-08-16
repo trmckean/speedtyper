@@ -2,8 +2,12 @@
 # Tyler McKean
 
 # Imports
+import pygame
 import time
+from multiprocessing import Process
+
 from GUI.MainWindow import MainWindow
+
 
 class SpeedTyper:
     test_string = ""
@@ -53,8 +57,9 @@ class SpeedTyper:
                                self.format(results[1]), self.format(results[2]))
 
     def play(self):
+        pygame.init()
         window = MainWindow(self.test_string)
-        window.run()
+        window.textWindow()
         """
         print self.welcome()
         while not self.is_ready():
@@ -67,7 +72,25 @@ class SpeedTyper:
         results = self.calculate_wpm(elapsed_time, user_type)
         self.score(elapsed_time, results)
         """
+    def play2(self):
+        pygame.init()
+        window2 = MainWindow(self.test_string)
+        time.sleep(2)
+        window2.run()
 
 if __name__ == '__main__':
-    game = SpeedTyper()
-    game.play()
+    game1 = SpeedTyper()
+    game2 = SpeedTyper()
+    p1 = Process(target=game1.play())
+    p1.start()
+    p1.join()
+    p2 = Process(target=game2.play2())
+    p2.join()
+
+
+    """
+    thread1 = threading.Thread(name="Window 1", target=game1.play())
+    thread2 = threading.Thread(name ="Window 2", target=game2.play2())
+    #thread1.start()
+    #thread2.start()
+    """
