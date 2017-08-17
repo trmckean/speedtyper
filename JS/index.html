@@ -5,7 +5,21 @@
     <title>Speed Typer</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/phaser.min.js"></script>
+    <script src="js/Boot.js"></script>
     <script src="js/Main.js"></script>
+    <script src="js/Finished.js"></script>
+    <style>
+        body{margin:0}
+    </style>
+    <script>
+        (function() {
+            var game = new Phaser.Game(1080, 720, Phaser.AUTO, "Speed Typer");
+            game.state.add("Boot", Boot);
+            game.state.add("Main", Main);
+            game.state.add("Finished", Finished);
+            game.state.start("Boot");
+        })();
+    </script>
 </head>
 <body>
 </body>
