@@ -8,6 +8,6 @@ Boot.prototype = {
         this.scale.pageAlignHorizontally = true;
         this.scale.pageAlignVertically = true;
         this.stage.backgroundColor = '#d3d2e0';
-        this.game.state.start("Main");
+        this.game.state.start("TitleScreen");
     }
 };
