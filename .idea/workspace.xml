@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4bb3d0a1-16d1-410a-985c-2fa6a0d7adc6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/js/Boot.js" afterPath="$PROJECT_DIR$/JS/js/Boot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/js/Finished.js" afterPath="$PROJECT_DIR$/JS/js/Finished.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/js/Main.js" afterPath="$PROJECT_DIR$/JS/js/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/js/TitleScreen.js" afterPath="$PROJECT_DIR$/JS/js/TitleScreen.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/js/phaser.min.js" afterPath="$PROJECT_DIR$/JS/js/phaser.min.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,6 +19,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LICENSE" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="speedtyper.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Python Implementation/speedtyper/speedtyper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-708">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/js/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="3885">
               <caret line="329" column="0" lean-forward="true" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
               <folding>
                 <element signature="e#5493#5715#0" expanded="false" />
@@ -195,6 +211,11 @@
             <path>
               <item name="speedtyperJS" type="b2602c69:ProjectViewProjectNode" />
               <item name="speedtyperJS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speedtyperJS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speedtyperJS" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -376,7 +397,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1499363829021</updated>
-      <workItem from="1502916205668" duration="27978000" />
+      <workItem from="1502916205668" duration="29080000" />
     </task>
     <task id="LOCAL-00001" summary="Added a class for the game and individual methods to make it more object oriented">
       <created>1499367433900</created>
@@ -448,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502944142588</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Working well&#10;&#10;Needs fancier UI">
+      <created>1502949713229</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1502949713229</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -460,7 +488,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27978000" />
+    <option name="totallyTimeSpent" value="29080000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -516,7 +544,8 @@
     <MESSAGE value="Calculating WPM" />
     <MESSAGE value="Added TitleScreen" />
     <MESSAGE value="Only captures one keypress now, shows errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Only captures one keypress now, shows errors" />
+    <MESSAGE value="Working well&#10;&#10;Needs fancier UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working well&#10;&#10;Needs fancier UI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -539,13 +568,6 @@
     <entry file="file://$PROJECT_DIR$/speedtyper/speedtyper.py" />
     <entry file="file://$PROJECT_DIR$/ball.bmp" />
     <entry file="file://$PROJECT_DIR$/speedtyper/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9099">
-          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/TestSpeedTyper.py" />
     <entry file="file://$PROJECT_DIR$/GUI/TextInput.py" />
     <entry file="file://$PROJECT_DIR$/GUI/Particle.py" />
@@ -586,6 +608,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JS/js/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3885">
+          <caret line="329" column="0" lean-forward="true" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
+          <folding>
+            <element signature="e#5493#5715#0" expanded="false" />
+            <element signature="e#5743#5965#0" expanded="false" />
+            <element signature="e#5993#6215#0" expanded="false" />
+            <element signature="e#6243#6465#0" expanded="false" />
+            <element signature="e#6493#6715#0" expanded="false" />
+            <element signature="e#6743#6965#0" expanded="false" />
+            <element signature="e#6993#7215#0" expanded="false" />
+            <element signature="e#7243#7465#0" expanded="false" />
+            <element signature="e#7493#7715#0" expanded="false" />
+            <element signature="e#7743#7965#0" expanded="false" />
+            <element signature="e#11909#14099#0" expanded="false" />
+            <element signature="e#14105#23756#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JS/js/phaser.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -618,24 +661,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/js/Main.js">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="329" column="0" lean-forward="true" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
-          <folding>
-            <element signature="e#5493#5715#0" expanded="false" />
-            <element signature="e#5743#5965#0" expanded="false" />
-            <element signature="e#5993#6215#0" expanded="false" />
-            <element signature="e#6243#6465#0" expanded="false" />
-            <element signature="e#6493#6715#0" expanded="false" />
-            <element signature="e#6743#6965#0" expanded="false" />
-            <element signature="e#6993#7215#0" expanded="false" />
-            <element signature="e#7243#7465#0" expanded="false" />
-            <element signature="e#7493#7715#0" expanded="false" />
-            <element signature="e#7743#7965#0" expanded="false" />
-            <element signature="e#11909#14099#0" expanded="false" />
-            <element signature="e#14105#23756#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python Implementation/speedtyper/speedtyper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-708">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
