@@ -3,22 +3,28 @@ var Main = function(game) {
 
 
 Main.prototype = {
+
     create:function() {
+
+        phrases = ["We the People of the United States, in Order to form a more perfect Union, establish Justice, " +
+        "insure domestic Tranquility, provide for the common defence, promote the general Welfare, " +
+        "and secure the Blessings of Liberty to ourselves and our Posterity, " +
+        "do ordain and establish this Constitution for the United States of America.", "Why, sometimes I've believed as " +
+        "many as six impossible things before breakfast.",
+            "We are all in the gutter, but some of us are looking at the stars.", "A heart is not judged by how much " +
+            "you love; but by how much you are loved by others",
+        "Sometimes I can hear my bones straining under the weight of all the lives I'm not living."];
+        numPhrases = phrases.length;
         style = {font: 'bold 20pt Arial', fill: 'black', align: 'center', wordWrap: true, wordWrapWidth: 450 };
-        phrases = [];
-        phrases.push("We the People of the United States, in Order to form a more perfect Union, establish Justice, " +
-            "insure domestic Tranquility, provide for the common defence, promote the general Welfare, " +
-            "and secure the Blessings of Liberty to ourselves and our Posterity, " +
-            "do ordain and establish this Constitution for the United States of America.");
-        phrases.push("aAAAaabbbaaaCCccB");
-        word = phrases[1];
-        var unpressed = false;
+
+        word = phrases[Math.floor((Math.random() * numPhrases))];
         words = word.length / 5.0;
         errors = 0;
-        done = false;
+
         displayWords = this.game.add.text(this.world.centerX, this.world.centerY, word, style);
         displayWords.anchor.setTo(0.5, 0.5);
-        showPressed = this.game.add.text(this.world.centerX + 100, this.world.centerY + 100, " ");
+
+        showPressed = this.game.add.text(this.world.centerX, this.world.centerY - 300, " ");
         showPressed.anchor.setTo(0.5, 0.5);
 
         this.defineKeys();
@@ -244,6 +250,32 @@ Main.prototype = {
             word = this.checkInput(word, 'z');
         displayWords.setText(word);
     },
+    validateSpace: function() {
+        showPressed.setText("Pressed Space");
+        word = this.checkInput(word, ' ');
+        displayWords.setText(word);
+    },
+    validateComma: function() {
+        showPressed.setText("Pressed ,");
+        word = this.checkInput(word, ',');
+        displayWords.setText(word);
+    },
+    validatePeriod: function() {
+        showPressed.setText("Pressed .");
+        word = this.checkInput(word, '.');
+        displayWords.setText(word);
+    },
+    validateSemicolon: function() {
+        showPressed.setText("Pressed ;");
+        word = this.checkInput(word, ';');
+        displayWords.setText(word);
+    },
+    validateApostrophe: function() {
+        showPressed.setText("Pressed ");
+        word = this.checkInput(word, "'");
+        displayWords.setText(word);
+    },
+
 
     letterKeys: function() {
 
@@ -288,26 +320,18 @@ Main.prototype = {
         }
     },
     punctuationKeys: function() {
-        if (spaceKey.isDown) {
-            showPressed.setText("Pressed Space");
-            word = this.checkInput(word, ' ');
-            displayWords.setText(word);
-        }
-        else if (commaKey.isDown) {
-            showPressed.setText("Pressed ,");
-            word = this.checkInput(word, ',');
-            displayWords.setText(word);
-        }
-        else if (periodKey.isDown) {
-            showPressed.setText("Pressed .");
-            word = this.checkInput(word, '.');
-            displayWords.setText(word);
-        }
+
+        spaceKey.onDown.add(this.validateSpace, this);
+        commaKey.onDown.add(this.validateComma, this);
+        periodKey.onDown.add(this.validatePeriod, this);
+        semicolonKey.onDown.add(this.validateSemicolon, this);
+        apostropheKey.onDown.add(this.validateApostrophe, this);
     },
 
     winGame: function() {
         if (word === "") {
-            winner = this.add.text(100, 100, "Winner!");
+            winStyle = {font: 'bold 70pt Arial'};
+            winner = this.add.text(this.world.centerX, this.world.centerY, "Winner!", winStyle);
             winner.anchor.setTo(0.5, 0.5);
             end_time = new Date().getTime() / 1000;
             elapsed_time = end_time - start_time;
@@ -318,12 +342,14 @@ Main.prototype = {
         }
     },
     checkInput: function(word, letter) {
+        showPressed.setText("Wanted: " + word.charAt(0) + "\nPressed: " + letter);
         if(word.charAt(0) === letter) {
             return word.slice(1);
         }
-        else
+        else {
             errors++;
             return word;
+        }
     },
 
     defineKeys: function() {
@@ -358,6 +384,8 @@ Main.prototype = {
         //Punctuation
         commaKey = this.input.keyboard.addKey(Phaser.Keyboard.COMMA);
         periodKey = this.input.keyboard.addKey(Phaser.Keyboard.PERIOD);
+        semicolonKey = this.input.keyboard.addKey(Phaser.Keyboard.COLON);
+        apostropheKey = this.input.keyboard.addKey(Phaser.Keyboard.QUOTES);
 
         //Numbers (With shift will correlate to more punctuation)
         oneKey = this.input.keyboard.addKey(Phaser.Keyboard.ONE);
