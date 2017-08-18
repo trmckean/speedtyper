@@ -2,6 +2,8 @@
 
 Copyright © 2017 Tyler McKean
 
+This work is avaiable under the GNU General Public License v 3.0. Please see the file 'LICENSE' or 'COPYING' in this repository for license terms.
+
 # Project Information
 Tyler McKean
 mckean@pdx.edu
